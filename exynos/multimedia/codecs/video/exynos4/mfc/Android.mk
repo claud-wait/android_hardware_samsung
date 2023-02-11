@@ -3,7 +3,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_COPY_HEADERS_TO := libsecmm
-LOCAL_COPY_HEADERS := \
+LOCAL_EXPORT_C_INCLUDE_DIRS := \
 	include/mfc_errno.h \
 	include/mfc_interface.h \
 	include/SsbSipMfcApi.h
@@ -20,9 +20,10 @@ LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/include/
 
 LOCAL_PRELINK_MODULE := false
+LOCAL_CFLAGS := -Wno-error
 
 ifeq ($(BOARD_USES_MFC_FPS),true)
-LOCAL_CFLAGS := -DCONFIG_MFC_FPS
+LOCAL_CFLAGS += -DCONFIG_MFC_FPS
 #LOCAL_CFLAGS += -DCONFIG_MFC_PERF_ALOG
 endif
 
@@ -42,7 +43,7 @@ include $(BUILD_STATIC_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_COPY_HEADERS_TO := libsecmm
-LOCAL_COPY_HEADERS := \
+LOCAL_EXPORT_C_INCLUDE_DIRS := \
 	include/mfc_errno.h \
 	include/mfc_interface.h \
 	include/SsbSipMfcApi.h
@@ -58,9 +59,10 @@ LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/include/
 
 LOCAL_PRELINK_MODULE := false
+LOCAL_CFLAGS := -Wno-error
 
 ifeq ($(BOARD_USES_MFC_FPS),true)
-LOCAL_CFLAGS := -DCONFIG_MFC_FPS
+LOCAL_CFLAGS += -DCONFIG_MFC_FPS
 #LOCAL_CFLAGS += -DCONFIG_MFC_PERF_ALOG
 endif
 
@@ -80,7 +82,7 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_COPY_HEADERS_TO := libsecmm
-LOCAL_COPY_HEADERS := \
+LOCAL_EXPORT_C_INCLUDE_DIRS := \
 	include/mfc_errno.h \
 	include/mfc_interface.h \
 	include/SsbSipMfcApi.h
@@ -96,9 +98,10 @@ LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/include/
 
 LOCAL_PRELINK_MODULE := false
+LOCAL_CFLAGS := -Wno-error
 
 ifeq ($(BOARD_USES_MFC_FPS),true)
-LOCAL_CFLAGS := -DCONFIG_MFC_FPS
+LOCAL_CFLAGS += -DCONFIG_MFC_FPS
 #LOCAL_CFLAGS += -DCONFIG_MFC_PERF_ALOG
 endif
 

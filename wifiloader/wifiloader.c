@@ -37,7 +37,7 @@
 #endif
 
 #ifndef WIFI_DRIVER_MODULE_PATH
-#define WIFI_DRIVER_MODULE_PATH   "/vendor/lib/modules/" WIFI_DRIVER_MODULE_NAME ".ko"
+#define WIFI_DRIVER_MODULE_PATH   "/system/lib/modules/" WIFI_DRIVER_MODULE_NAME ".ko"
 #endif
 
 #ifndef WIFI_DRIVER_FW_PATH_PARAM

@@ -16,6 +16,7 @@ LOCAL_SRC_FILES := \
 	csc_tiled_to_linear_crop_neon.s \
 	csc_tiled_to_linear_deinterleave_crop_neon.s \
 	csc_ARGB8888_to_YUV420SP_NEON.s \
+	csc_ABGR8888_to_YUV420SP_NEON.s \
 	csc_interleave_memcpy_neon.s \
 	csc_fimc.cpp
 
@@ -28,6 +29,7 @@ LOCAL_C_INCLUDES := \
 ifeq ($(BOARD_USE_SAMSUNG_COLORFORMAT), true)
 LOCAL_CFLAGS += -DUSE_SAMSUNG_COLORFORMAT
 endif
+LOCAL_CFLAGS += -Wno-error
 
 LOCAL_MODULE := libseccscapi
 

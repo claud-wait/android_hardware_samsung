@@ -63,7 +63,9 @@ Return<void> Power::setInteractive(bool interactive) {
         }
     }
 
-    if (!sec_touchscreen.empty()) set(sec_touchscreen, interactive ? "1" : "0");
+    if (!sec_touchscreen.empty()) {
+        set(sec_touchscreen, interactive ? "1" : "0");
+    }
 
     if (!sec_touchkey.empty()) {
         if (!interactive) {
