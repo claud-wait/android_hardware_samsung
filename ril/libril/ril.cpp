@@ -674,13 +674,8 @@ RIL_onRequestComplete(RIL_Token t, RIL_Errno e, void *response, size_t responsel
         int rwlockRet = pthread_rwlock_rdlock(radioServiceRwlockPtr);
         assert(rwlockRet == 0);
 
-        if (pRI->pCI->responseFunction) {
-            RLOGE ("%s: ====> token %d response: (%p) responselen: %d", __func__, pRI->token, response, responselen);
-            ret = pRI->pCI->responseFunction((int) socket_id,
+        ret = pRI->pCI->responseFunction((int) socket_id,
                     responseType, pRI->token, e, response, responselen);
-        } else {
-            RLOGE ("No unsolicited response function defined for token %d", pRI->token);
-        }
 
         rwlockRet = pthread_rwlock_unlock(radioServiceRwlockPtr);
         assert(rwlockRet == 0);

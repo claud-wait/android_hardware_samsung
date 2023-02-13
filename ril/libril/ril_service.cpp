@@ -3118,8 +3118,6 @@ int radio::getIccCardStatusResponse(int slotId,
                 appStatus[i].pin2 = (PinState) rilAppStatus[i].pin2;
             }
         } else {
-            RLOGE("%s: Invalid response: Unsupported RIL_CardStatus (%d)",
-                __func__, responseLen);
             if (e == RIL_E_SUCCESS) responseInfo.error = RadioError::INVALID_RESPONSE;
         }
 
