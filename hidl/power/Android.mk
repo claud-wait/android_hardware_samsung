@@ -40,6 +40,7 @@ LOCAL_STATIC_LIBRARIES := libc++fs
 LOCAL_MODULE := android.hardware.power@1.0-service.exynos
 LOCAL_INIT_RC := android.hardware.power@1.0-service.exynos.rc
 LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := samsung
 LOCAL_VENDOR_MODULE := true
